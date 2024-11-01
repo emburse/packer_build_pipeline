@@ -27,7 +27,7 @@ def call(body) {
 
   def bakeEnv = []
   bakeEnv << "REGION=${config.get('region')}"
-  bakeEnv << "PACKER_INSTANCE_TYPE=${config.get('bakeAMIType', 'c5.large')}"
+  bakeEnv << "PACKER_INSTANCE_TYPE=${config.get('bakeAMIType', 'm4.large')}"
   bakeEnv << "CHEF_RUN_LIST=${config.get('bakeChefRunList')}"
   bakeEnv << "PACKER_TEMPLATE=${config.get('packerTemplate', 'packer/amz_ebs_ami.json')}"
   bakeEnv << "PACKER_DEFAULT_PARAMS=${config.get('packerDefaultParams', 'base_params.json')}"
